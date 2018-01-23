@@ -1,0 +1,20 @@
+apply plugin: "java"
+apply plugin: "application"
+
+sourceSets {
+           main.java.srcDir "src"
+}
+
+mainClassName = "seedu.addressbook.AddressBook"
+
+run {
+ standardInput = System.in
+}
+
+task runShellTest(type: Exec) {
+  commandLine 'sh', './test/runtests.sh'
+}
+
+task runShellTests(type: Test) {
+  dependsOn runShellTest
+}
