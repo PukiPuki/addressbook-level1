@@ -629,6 +629,13 @@ public class AddressBook {
     }
   }
 
+  /** Shows a message to the user */
+  private static void showToUserWithoutVarargs(String[] message) {
+    for (String m : message) {
+      System.out.println(LINE_PREFIX + m);
+    }
+  }
+
   /** Shows the list of persons to the user. The list will be indexed, starting from 1. */
   private static void showToUser(ArrayList<HashMap<PersonProperty, String>> persons) {
     String listAsString = getDisplayString(persons);
